@@ -1,0 +1,11 @@
+!async function(){for(;!Spicetify.React||!Spicetify.ReactDOM;)await new Promise(e=>setTimeout(e,10));var i,c,s,d,y,m,v,e;i=Object.defineProperty,c=Object.defineProperties,s=Object.getOwnPropertyDescriptors,d=Object.getOwnPropertySymbols,y=Object.prototype.hasOwnProperty,m=Object.prototype.propertyIsEnumerable,v=(e,t,n)=>t in e?i(e,t,{enumerable:!0,configurable:!0,writable:!0,value:n}):e[t]=n,e=async function e(){var{Platform:t,Menu:i,PopupModal:r}=Spicetify,a=t.PlayerAPI;if(t&&i&&a&&r){const u=t.PlaybackAPI,p=(i=await b(".volume-bar.main-nowPlayingBar-volumeBar"),a=await b(".volume-bar__slider-container",i),t=Spicetify.Tippy(a,(r=((e,t)=>{for(var n in t=t||{})y.call(t,n)&&v(e,n,t[n]);if(d)for(var n of d(t))m.call(t,n)&&v(e,n,t[n]);return e})({},Spicetify.TippyProps),c(r,s({delay:0,interactive:!0,hideOnClick:!1,interactiveBorder:20})))),document.createElement("input"));p.setAttribute("id","volume-plus-input"),p.style.background="none",p.style.padding="0",p.style.border="0",p.style.textAlign="center",p.style.fontSize="1em",p.style.minWidth="1ch",p.style.maxWidth="3ch",p.style.color="var(--spice-text)",p.type="text",p.maxLength=3,p.addEventListener("keydown",e=>{1==e.key.length&&isNaN(Number(e.key))&&e.preventDefault()}),p.addEventListener("change",()=>{u.setVolume(Number(p.value)/100)}),o(),u._events.addListener("volume",o),l(),p.addEventListener("input",l),(a=document.createElement("style")).textContent=`
+		#volume-plus-input::-webkit-outer-spin-button,
+		#volume-plus-input::-webkit-inner-spin-button {
+			-webkit-appearance: none;
+			margin: 0;
+		}
+
+		#${t.popper.id} .main-contextMenu-tippy:after {
+			content: "%";
+		}
+	`,(r=await b(".main-contextMenu-tippy",t.popper)).appendChild(p),r.appendChild(a);let n=!1;function o(){p.value=""+Math.round(100*u._volume)}function l(){p.style.maxWidth=p.value.length+"ch"}i.addEventListener("wheel",e=>{var t;e.stopPropagation(),n||(n=!0,t=e.getModifierState("Shift")?.05:.01,e=u._volume-Math.sign(e.deltaY)*t,u.setVolume(e),u._events.addListener("volume",()=>{n=!1},{once:!0}))})}else setTimeout(e,250)},(async()=>{await e()})();function b(r,a=document.body){return new Promise(n=>{var e=a.querySelector(r);if(e)return n(e);const i=new MutationObserver(e=>{var t=a.querySelector(r);t&&(i.disconnect(),n(t))});i.observe(a,{childList:!0,subtree:!0})})}}();

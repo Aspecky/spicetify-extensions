@@ -1,0 +1,12 @@
+[
+    {
+        "name": "Volume Plus",
+        "description": "Another Spicetify extension to show how to make a manifest.",
+        "preview": "volume-plus/preview.png",
+        "main": "volume-plus/volume-plus.js",
+        "readme": "volume-plus/README.md",
+        "tags": [
+            "volume"
+        ]
+    }
+]
