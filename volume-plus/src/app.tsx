@@ -8,7 +8,6 @@ async function main() {
 		return
 	}
 
-	// console.log(Platform.PlaybackAPI)
 	const PlaybackAPI = Platform.PlaybackAPI
 
 	const container = await waitForElement<HTMLDivElement>(".volume-bar.main-nowPlayingBar-volumeBar")
@@ -51,6 +50,7 @@ async function main() {
 	// update volumeInput when volume changes
 	function updateTooltip() {
 		volumeInput.value = `${Math.round(PlaybackAPI._volume * 100)}`
+		updateWidth()
 	}
 	updateTooltip()
 	PlaybackAPI._events.addListener("volume", updateTooltip)
