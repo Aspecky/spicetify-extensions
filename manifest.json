@@ -1,12 +1,12 @@
 [
     {
         "name": "Volume Plus",
-        "description": "Another Spicetify extension to show how to make a manifest.",
+        "description": "View/Modify volume with a tooltip or mouse wheel.",
         "preview": "volume-plus/preview.png",
         "main": "volume-plus/volume-plus.js",
         "readme": "volume-plus/README.md",
         "tags": [
-            "volume"
+            "volume", "audio"
         ]
     }
 ]
