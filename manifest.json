@@ -1,7 +1,7 @@
 [
     {
         "name": "Volume Plus",
-        "description": "View/Modify volume with a tooltip or mouse wheel.",
+        "description": "View/Modify volume with a tooltip or the mouse wheel.",
         "preview": "volume-plus/preview.png",
         "main": "volume-plus/volume-plus.js",
         "readme": "volume-plus/README.md",
