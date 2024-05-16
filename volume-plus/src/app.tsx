@@ -4,13 +4,11 @@ import "./assets/config.css";
 
 async function main() {
 	const { Platform, Menu, PopupModal, ReactDOM, React, LocalStorage } = Spicetify
-	const { PlayerAPI } = Platform
-	if (!Platform || !Menu || !PlayerAPI || !PopupModal || !React || !ReactDOM || !LocalStorage) {
+	const { PlaybackAPI } = Platform
+	if (!Platform || !Menu || !PlaybackAPI || !PopupModal || !React || !ReactDOM || !LocalStorage) {
 		setTimeout(main, 250)
 		return
 	}
-
-	const PlaybackAPI = Platform.PlaybackAPI
 
 	// MARK: Tooltip
 	const container = await waitForElement<HTMLDivElement>(".volume-bar.main-nowPlayingBar-volumeBar")
