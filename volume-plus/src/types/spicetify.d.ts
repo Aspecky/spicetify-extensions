@@ -1309,7 +1309,7 @@ declare namespace Spicetify {
 	/** React instance to create components */
 	const React: any;
 	/** React DOM instance to render and mount components */
-	const ReactDOM: any;
+	const ReactDOM: typeof import("react-dom");
 	/** React DOM Server instance to render components to string */
 	const ReactDOMServer: any;
 

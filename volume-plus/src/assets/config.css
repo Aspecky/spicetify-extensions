@@ -1,0 +1,39 @@
+.x-settings-section {
+    display: grid;
+    gap: 8px
+}
+
+.x-settings-row {
+    display: grid;
+    gap: 8px 24px;
+    grid-template-columns: 2fr 1fr
+}
+
+.x-settings-firstColumn,.x-settings-secondColumn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center
+}
+
+.x-settings-secondColumn {
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    position: relative
+}
+
+.x-settings-input {
+    background: rgba(var(--spice-rgb-selected-row),.1);
+    background-color: var(--spice-tab-active);
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: var(--spice-text);
+    font-family: inherit;
+    font-size: 14px;
+    height: 40px;
+    padding: 0 12px;
+    width: 100%
+}
