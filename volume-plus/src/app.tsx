@@ -1,5 +1,5 @@
 import { SettingsSection } from "spcr-settings";
-import { waitForElement } from "./utils";
+import { clamp, waitForElement } from "./utils";
 import "./assets/config.css";
 
 async function main() {
@@ -160,6 +160,7 @@ async function main() {
 	container.addEventListener("wheel", (ev) => {
 		// override spotify's default mouse wheel listener
 		ev.stopPropagation();
+		console.log("scroll");
 
 		// debounce so that the volume slider doesnt jump back and forth
 		if (debounce) {
@@ -178,8 +179,17 @@ async function main() {
 		}
 
 		const step = Number(settings.getFieldValue(field)) / 100;
-		const newVolume = PlaybackAPI._volume - Math.sign(ev.deltaY) * step;
+		const newVolume = clamp(
+			PlaybackAPI._volume - Math.sign(ev.deltaY) * step,
+			0,
+			1,
+		);
 		PlaybackAPI.setVolume(newVolume);
+
+		if (newVolume == 0 || newVolume == 1) {
+			debounce = false;
+			return;
+		}
 		PlaybackAPI._events.addListener(
 			"volume",
 			() => {
